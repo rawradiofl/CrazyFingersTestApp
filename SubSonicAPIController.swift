@@ -12,7 +12,7 @@ protocol SubSonicAPIControllerProtocol {
     func didReceiveAPIResults(results: NSDictionary)
 }
 
-class SubSonicAPI {
+class SubSonicAPIController {
     var delegate: SubSonicAPIControllerProtocol?
     var baseUrl: String? = "http://camelwalk.subsonic.org/rest/"
     var user: String
@@ -51,7 +51,8 @@ class SubSonicAPI {
                     // There was an error while parsing the json. print to console
                     println("JSON Error: \(err?.localizedDescription)")
                 }
-                let results: NSArray = jsonResult["results"] as NSArray
+                
+                //let results: NSArray = jsonResult["subsonic-response"] as NSArray
                 self.delegate?.didReceiveAPIResults(jsonResult)
             })
             task.resume()
@@ -64,6 +65,7 @@ class SubSonicAPI {
         let escapedTerm = term.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         urlString = urlString + "&query=\(escapedTerm!)"
         println("url string: \(urlString)")
+        get(urlString)
     }
     
     func getArtists() {

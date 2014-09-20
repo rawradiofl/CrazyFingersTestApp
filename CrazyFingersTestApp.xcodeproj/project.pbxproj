@@ -14,6 +14,7 @@
 		F06D6CBB19CCA246004A8E6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06D6CB919CCA246004A8E6F /* LaunchScreen.xib */; };
 		F06D6CC719CCA246004A8E6F /* CrazyFingersTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D6CC619CCA246004A8E6F /* CrazyFingersTestAppTests.swift */; };
 		F06D6CD119CCA283004A8E6F /* SubSonicAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D6CD019CCA283004A8E6F /* SubSonicAPIController.swift */; };
+		F093F12219CD3D6100CA23B8 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093F12119CD3D6100CA23B8 /* Album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		F06D6CC519CCA246004A8E6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F06D6CC619CCA246004A8E6F /* CrazyFingersTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrazyFingersTestAppTests.swift; sourceTree = "<group>"; };
 		F06D6CD019CCA283004A8E6F /* SubSonicAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubSonicAPIController.swift; path = ../SubSonicAPIController.swift; sourceTree = "<group>"; };
+		F093F12119CD3D6100CA23B8 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		F06D6CA219CCA246004A8E6F = {
 			isa = PBXGroup;
 			children = (
+				F093F12119CD3D6100CA23B8 /* Album.swift */,
 				F06D6CAD19CCA246004A8E6F /* CrazyFingersTestApp */,
 				F06D6CC319CCA246004A8E6F /* CrazyFingersTestAppTests */,
 				F06D6CAC19CCA246004A8E6F /* Products */,
@@ -218,6 +221,7 @@
 				F06D6CD119CCA283004A8E6F /* SubSonicAPIController.swift in Sources */,
 				F06D6CB319CCA246004A8E6F /* SearchResultsController.swift in Sources */,
 				F06D6CB119CCA246004A8E6F /* AppDelegate.swift in Sources */,
+				F093F12219CD3D6100CA23B8 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				F06D6CCC19CCA246004A8E6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F06D6CCD19CCA246004A8E6F /* Build configuration list for PBXNativeTarget "CrazyFingersTestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				F06D6CCF19CCA246004A8E6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

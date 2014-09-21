@@ -35,7 +35,7 @@ class SubSonicAPIController {
     }
     
     func get(path: String) {
-        let url = NSURL(string: path)
+        let url: NSURL? = NSURL(string: path)
         
         let session = NSURLSession.sharedSession()
         if url != nil {

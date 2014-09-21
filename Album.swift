@@ -17,7 +17,7 @@ class Album {
     var created: String?
     var artistId: String?
     
-    init(name: String, artist: String, id:String, duration: String?, created: String?, artistId: String?, songCount: String?) {
+    init(name: String, artist: String, id: String, duration: String?, created: String?, artistId: String?, songCount: String?) {
         self.name = name
         self.id = id
         self.artist = artist
@@ -34,15 +34,12 @@ class Album {
             for result in allResults {
                 let name = result["name"] as? String ?? ""
                 let artist = result["artist"] as? String ?? ""
-                let id = result["id"] as? String ?? ""
-                println(result["id"])
-                
-                println("name:\(name) artist:\(artist) id:\(id)")
-                var newAlbum = Album(name: name, artist: artist, id: id, duration: nil, created: nil, artistId: nil, songCount: nil)
+                var id = result["id"] as Int
+                var idString = String(id)
+                var newAlbum = Album(name: name, artist: artist, id: idString, duration: nil, created: nil, artistId: nil, songCount: nil)
                 albums.append(newAlbum)
             }
         }
-        println("count: \(albums.count)")
         return albums
     }
 }

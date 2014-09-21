@@ -19,7 +19,6 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         api = SubSonicAPIController(delegate: self, user: "guest", passwd: "guest420", appName: "TestApp", base: nil)
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         //api?.search3("Crazy Fingers")
     }
 
@@ -53,11 +52,13 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
         let album = self.albums[indexPath.row]
         cell.textLabel?.text = album.name
         cell.detailTextLabel?.text = album.artist
+        println(album.id)
         return cell
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         if let searchTerm: String = searchBar.text {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             api?.search3(searchTerm)
         }
         self.searchBar.resignFirstResponder()

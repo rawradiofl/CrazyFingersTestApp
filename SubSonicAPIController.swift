@@ -61,7 +61,9 @@ class SubSonicAPIController {
     
     func search3(searchTerm: String) {
         var urlString = buildUrl("search3.view")
-        let term = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        var term = searchTerm.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        term = term.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        term = term.stringByReplacingOccurrencesOfString("\"", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
         let escapedTerm = term.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         urlString = urlString + "&query=\(escapedTerm!)"
         println("url string: \(urlString)")

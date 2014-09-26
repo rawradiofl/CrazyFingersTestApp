@@ -59,10 +59,10 @@
                         <constraints>
                             <constraint firstItem="GfP-Xy-DL6" firstAttribute="top" secondItem="h10-SG-fnc" secondAttribute="bottom" constant="4" id="6bX-Sb-jGl"/>
                             <constraint firstItem="h10-SG-fnc" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="12" id="FfF-w8-ERf"/>
-                            <constraint firstItem="GfP-Xy-DL6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-18" id="KTj-zW-WjX"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="GfP-Xy-DL6" secondAttribute="bottom" constant="4" id="Skf-rb-0Ir"/>
                             <constraint firstItem="h10-SG-fnc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="Xgr-Sw-IZj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GfP-Xy-DL6" secondAttribute="trailing" constant="-6" id="b4A-4W-Tf3"/>
+                            <constraint firstItem="GfP-Xy-DL6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-18" id="gLc-gY-4LF"/>
                             <constraint firstItem="h10-SG-fnc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-12" id="rh1-YG-0vr"/>
                         </constraints>
                     </view>

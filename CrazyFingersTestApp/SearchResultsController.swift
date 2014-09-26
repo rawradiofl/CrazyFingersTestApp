@@ -35,12 +35,17 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
         }
         println(status)
         let searchResult: NSDictionary = response["searchResult3"] as NSDictionary
-        var resultsArr: NSArray = searchResult["album"] as NSArray
-        dispatch_async(dispatch_get_main_queue(), {
-            self.albums = Album.albumsWithJSON(resultsArr)
-            self.searchResultsTableView.reloadData()
+        var resultsArr: NSArray? = searchResult["album"] as? NSArray
+        if let albumResults = resultsArr {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.albums = Album.albumsWithJSON(albumResults)
+                self.searchResultsTableView.reloadData()
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                
+            })
+        } else {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        })
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

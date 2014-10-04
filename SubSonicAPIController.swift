@@ -71,7 +71,7 @@ class SubSonicAPIController {
     }
     
     func getArtists() {
-        var urlString = buildUrl("getArtists.view")
+        let urlString = buildUrl("getArtists.view")
         //println("artists: \(urlString)")
         get(urlString)
         

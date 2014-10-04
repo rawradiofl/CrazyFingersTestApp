@@ -34,9 +34,13 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
             println("There was an issue with the results: remote server returned status:\(status)")
         }
         println(status)
-        let searchResult: NSDictionary = response["searchResult3"] as NSDictionary
-        var resultsArr: NSArray? = searchResult["album"] as? NSArray
+        println(response)
+        var resultsArr: NSArray?
+        if let searchResult: NSDictionary = response["searchResult3"] as? NSDictionary {
+            resultsArr = searchResult["album"] as? NSArray
+        }
         if let albumResults = resultsArr {
+            println("results found")
             dispatch_async(dispatch_get_main_queue(), {
                 self.albums = Album.albumsWithJSON(albumResults)
                 self.searchResultsTableView.reloadData()
@@ -44,6 +48,13 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
                 
             })
         } else {
+            println("no results found")
+            self.albums.removeAll(keepCapacity: false)
+            println("albums count: \(self.albums.count)")
+            for n in self.albums {
+                println(n)
+            }
+            self.searchResultsTableView.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }

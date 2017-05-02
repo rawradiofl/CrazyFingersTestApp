@@ -52,7 +52,7 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
             self.albums.removeAll(keepCapacity: false)
             println("albums count: \(self.albums.count)")
             for n in self.albums {
-                println(n)
+                println("Album after removeAll \(n)")
             }
             self.searchResultsTableView.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -66,7 +66,7 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
         let album = self.albums[indexPath.row]
-        cell.textLabel?.text = album.name
+        cell.textLabel.text = album.name
         cell.detailTextLabel?.text = album.artist
         println(album.id)
         return cell
